@@ -1,0 +1,30 @@
+Metrics for Qwen
+WER: 3.39%
+CER: 0.86%
+
+Metrics for Only OCR without skipping
+WER: 26.9%
+CER: 5.2%
+
+Metrics for YandexGPT without skipping
+WER: 31.3%
+CER: 26.3%
+
+Metrics for Sage T5 without skipping
+WER: 8.6%
+CER: 2.7%
+
+Metrics for Only OCR with skipping
+WER: 27.0%
+CER: 5.5%
+Skipped 4 blocks
+
+Metrics for YandexGPT with skipping
+WER: 9.2%
+CER: 3.3%
+Skipped 4 blocks
+
+Metrics for Sage T5 with skipping
+WER: 9.6%
+CER: 3.1%
+Skipped 4 blocks
