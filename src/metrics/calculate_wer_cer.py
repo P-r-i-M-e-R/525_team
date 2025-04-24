@@ -42,7 +42,7 @@ def unroll_list_columns(df):
     df = df.reset_index()
 
     # Create a MultiIndex Series by exploding all columns
-    list_cols = ["Path", "After OCR", "After LLM", "rects", "original_paths"]
+    list_cols = ["Path", "After OCR", "After LLM", "rects", "original_paths", "entity_types"]
     df_list = df.copy()
     df_list[list_cols] = df[list_cols].apply(lambda x: x.apply(eval))
     # df_list = df
@@ -55,17 +55,18 @@ def for_file(name: str) -> str:
     return name.lower().replace(" ", "_")
 
 if __name__ == '__main__':
-    pd.set_option('display.max_columns', 500)
-    pd.set_option('display.width', 1000)
+    # pd.set_option('display.max_columns', 500)
+    # pd.set_option('display.width', 1000)
 
-    # df_ocr = pd.read_csv("../ocr_with_boxes.csv").set_index("Page")
+    # df_ocr = pd.read_csv(PROJECT_ROOT / "ocr_with_boxes.csv").set_index("Page")
     #
     # df_unrolled = unroll_list_columns(df_ocr)
-    # df_unrolled.to_csv("../ocr_with_boxes_unrolled.csv", index=False)
+    # df_unrolled.to_csv(PROJECT_ROOT / "ocr_with_boxes_unrolled.csv", index=False)
 
     df_unrolled = pd.read_csv(PROJECT_ROOT / "ocr_with_boxes_unrolled_corrected.csv")
 
     print(df_unrolled.head())
+    # exit()
 
     # for SELECTED_PLOT in [(PlotTypes.only_ocr, SkipTypes.no_skipping), (PlotTypes.only_ocr, SkipTypes.skipping), (PlotTypes.yandex_gpt, SkipTypes.no_skipping), (PlotTypes.yandex_gpt, SkipTypes.skipping)]:
     for SELECTED_PLOT in [(PlotTypes.sage_t5, SkipTypes.no_skipping), (PlotTypes.sage_t5, SkipTypes.skipping)]:

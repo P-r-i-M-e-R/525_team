@@ -17,7 +17,7 @@ def preprocess_text(text: str):
         return " ".join(text.split("\n"))
 
 # Function to process batch of texts
-def correct_spelling_batch(texts, batch_size=32):
+def correct_spelling_batch(texts, batch_size=16):
     corrected_texts = []
 
     # Process in batches
@@ -48,7 +48,7 @@ def correct_spelling_batch(texts, batch_size=32):
 
 
 # Load the unrolled DataFrame
-df_unrolled = pd.read_csv(PROJECT_ROOT / "ocr_with_boxes_unrolled.csv")
+df_unrolled = pd.read_csv(PROJECT_ROOT / "final_unrolled.csv")
 
 # Apply spelling correction to the "After OCR" column
 print("Starting spelling correction...")
@@ -58,6 +58,6 @@ corrected_texts = correct_spelling_batch([preprocess_text(text) if isinstance(te
 df_unrolled["After Sage Correction"] = corrected_texts
 
 # Save the results
-output_path = PROJECT_ROOT / "ocr_with_boxes_unrolled_corrected.csv"
+output_path = PROJECT_ROOT / "final_unrolled_corrected.csv"
 df_unrolled.to_csv(output_path, index=False)
 print(f"Spelling correction complete. Results saved to {output_path}")

@@ -53,6 +53,14 @@ def get_original_path(path: str):
 
     return str(ORIG_PATH_PREFIX / original_rel_path)
 
+def get_type_by_path(path: str):
+    rel_path = Path(path).relative_to(ROOT)
+    file_name = rel_path.with_suffix("").name
+    components = file_name.split("_")[1:]
+    entity_type = components[1:-1]
+    entity_type = "_".join(entity_type)
+    return entity_type
+
 
 if __name__ == '__main__':
     tqdm.pandas()
@@ -68,6 +76,7 @@ if __name__ == '__main__':
 
     df_ocr["rects"] = df_ocr["Path"].progress_apply(lambda paths: [get_bbox_by_path(path) for path in paths])
     df_ocr["original_paths"] = df_ocr["Path"].progress_apply(lambda paths: [get_original_path(path) for path in paths])
+    df_ocr["entity_types"] = df_ocr["Path"].progress_apply(lambda paths: [get_type_by_path(path) for path in paths])
 
     df_ocr.to_csv(PROJECT_ROOT / "ocr_with_boxes.csv", index=False)
 

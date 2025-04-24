@@ -4,8 +4,9 @@ cropped_blocks_no_matching/
 val_data/
 ocr_data/
 ocr_data_validated/
-DocLayout-YOLO/
+bbox_detection/
 mipt-nekrasovka/
+val_articles/
 *.zip
 *.csv
 *.json
