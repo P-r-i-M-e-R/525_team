@@ -11,7 +11,10 @@ model = AutoModelForSeq2SeqLM.from_pretrained("ai-forever/sage-fredt5-distilled-
 model.to("cuda")
 
 def preprocess_text(text: str):
-    return "".join(text.split("\n"))
+    if len(text) > 100:
+        return "".join(text.split("\n"))
+    else:
+        return " ".join(text.split("\n"))
 
 # Function to process batch of texts
 def correct_spelling_batch(texts, batch_size=32):
