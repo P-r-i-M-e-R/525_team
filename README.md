@@ -27,13 +27,13 @@
 
 ## &#x1F9E9; Components
 ### :page_facing_up: Example_page 
-- Contains example of recognized page
+    Contains example of recognized page
 
 ### :bar_chart: Metrics
-- Here you can find ocr accuracy metrics
+    Here you can find ocr accuracy metrics
 
 ### &#x1F9F9; notebooks
-- Holds all notebooks for preprocessing images. Like binarization and droping damaged pages
+    Holds all notebooks for preprocessing images. Like binarization and droping damaged pages
 
 ### &#x1F9E0; src
-- Contains all main logic files. From yolo detection to postprocess and web service
+    Contains all main logic files. From yolo detection to postprocess and web service
