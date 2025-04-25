@@ -1,7 +1,7 @@
 # 
 <div align="center" style="font-family: monospace; margin: 2em 0; line-height: 1.4">
 
-  <img src="https://i.postimg.cc/Y0mp0x9w/photo-2025-04-25-09-10-36.jpg" alt="Лого" width="500">
+  <img src="https://i.postimg.cc/02dKGpxC/525-team-6507-BD3.gif" alt="Demo" width="650"/>
   <br>
   <div style="font-family: 'Courier New', monospace; text-align: center; padding: 20px; color: #222; line-height: 1.6;">
   <div style="font-size: 1.2em; letter-spacing: 2px; margin-bottom: 5px;">
